@@ -1,0 +1,136 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        "health"
+    ],
+    "companyName": "majestic.mudkip@gmail.com",
+    "enableMultiJS": true,
+    "longName": "Love Live! School Idol Watchface",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/umi.png",
+                "name": "IMAGE_UMI",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/rin.png",
+                "name": "IMAGE_RIN",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/pana.png",
+                "name": "IMAGE_PANA",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/nozo.png",
+                "name": "IMAGE_NOZO",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/nico.png",
+                "name": "IMAGE_NICO",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/maki.png",
+                "name": "IMAGE_MAKI",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/kotori.png",
+                "name": "IMAGE_KOTORI",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/eli.png",
+                "name": "IMAGE_ELI",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/honk.png",
+                "name": "IMAGE_HONK",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "fonts/AhahaMojimoji.ttf",
+                "name": "FONT_AHAHAMOJIMOJI_14",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9 a-z]",
+                "file": "fonts/leaguespartan-bold.ttf",
+                "name": "FONT_LEAGUE_BOLD_14",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9]",
+                "file": "fonts/leaguespartan-bold.ttf",
+                "name": "FONT_LEAGUE_BOLD_36",
+                "targetPlatforms": null,
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Love Live! SIW",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "1022aaa4-e761-4ec6-a60c-bcf762bb5f86",
+    "versionLabel": "0.01",
+    "watchapp": {
+        "watchface": true
+    }
+}
