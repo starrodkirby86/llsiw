@@ -37,14 +37,15 @@
 * Main file.
 * This executes the entire watchface and stuff.
 * The good meat is inside other files. Go search there instead!
-* 
 *
 */
 
 #include <pebble.h>
+#include "windows/window_rect.h"
 
 Window *window;
 TextLayer *dummy_text;
+static GFont s_font;
 
 void text_update_proc(void) {
   time_t temp = time(NULL);
@@ -66,6 +67,13 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 static void init() {
   // Nico nico ni.
   
+  // Load rectangular windows.
+  window_rect_push();
+  
+  // Load custom font.
+  s_font = fonts_load_custom_font(
+                          resource_get_handle(RESOURCE_ID_FONT_LEAGUE_BOLD_36));
+  
   // Handle window.
   window = window_create();
   
@@ -76,7 +84,7 @@ static void init() {
   dummy_text = text_layer_create(window_bounds);
   text_layer_set_text_color(dummy_text, GColorRed);
   text_layer_set_text_alignment(dummy_text, GTextAlignmentCenter);
-  text_layer_set_font(dummy_text, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_font(dummy_text, s_font);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(dummy_text));
   
   window_stack_push(window, true);
