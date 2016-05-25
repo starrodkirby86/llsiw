@@ -37,24 +37,14 @@
 * Main file.
 * This executes the entire watchface and stuff.
 * The good meat is inside other files. Go search there instead!
-*
 */
-
-// TODO: The watchface only has one actual window.
-// Everything else is actually LAYERS. So please keep that in mind.
-// CHALLENGE: Refactor the code into LAYERS~!
 
 #include <pebble.h>
 #include "windows/main_window.h"
 
-static GFont s_font;
-
 static void init() {
   // Nico nico ni.
-  
-  // Load custom font.
-  s_font = fonts_load_custom_font(
-                          resource_get_handle(RESOURCE_ID_FONT_LEAGUE_BOLD_36));
+
   main_window_push();
   
 }
