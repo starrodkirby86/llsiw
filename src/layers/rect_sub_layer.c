@@ -11,6 +11,7 @@
 
 #include <pebble.h>
 #include "rect_sub_layer.h"
+#include "data/idol_rng.h"
 
 #define RECT_SUB_W_OFFSET 8
 #define RECT_MASTER_HEIGHT 48
@@ -26,7 +27,7 @@ static void rect_sub_layer_update_proc(Layer *layer, GContext* ctx) {
   GRect bounds = layer_get_bounds(layer);
   GRect rect_sub_master = GRect( RECT_SUB_W_OFFSET, PBL_IF_ROUND_ELSE( bounds.size.h/2+RECT_MASTER_HEIGHT/2, bounds.size.h/8+RECT_MASTER_HEIGHT), bounds.size.w, RECT_SUB_HEIGHT);
   //printf("UL Coord is (%d, %d) while size is (%d, %d)", rect_sub_master.origin.x, rect_sub_master.origin.y, rect_sub_master.size.w, rect_sub_master.size.h);
-  graphics_context_set_fill_color(ctx, GColorPictonBlue);
+  graphics_context_set_fill_color(ctx, get_idol_sub_color());
   graphics_fill_rect(ctx, rect_sub_master, 0, GCornerNone);
 }
 

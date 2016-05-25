@@ -11,6 +11,7 @@
 
 #include <pebble.h>
 #include "rect_layer.h"
+#include "data/idol_rng.h"
 
 #define RECT_MASTER_HEIGHT 48
 
@@ -24,7 +25,7 @@ static void rect_window_update_proc(Layer *layer, GContext* ctx) {
   GRect bounds = layer_get_bounds(layer);
   GRect rect_master = GRect( 0, PBL_IF_ROUND_ELSE( bounds.size.h/2 - RECT_MASTER_HEIGHT/2, bounds.size.h/8), bounds.size.w, RECT_MASTER_HEIGHT);
   //printf("UL Coord is (%d, %d) while size is (%d, %d)", rect_master.origin.x, rect_master.origin.y, rect_master.size.w, rect_master.size.h);
-  graphics_context_set_fill_color(ctx, GColorBrilliantRose);
+  graphics_context_set_fill_color(ctx, get_idol_main_color());
   graphics_fill_rect(ctx, rect_master, 0, GCornerNone);
 }
 
