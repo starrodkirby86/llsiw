@@ -10,7 +10,9 @@
 **/
 
 #include <pebble.h>
-#include "windows/window_rect.h"
+#include "window_rect.h"
+
+#define RECT_MASTER_HEIGHT 36
 
 static Window *rect_window;
 static Layer *rect_layer;
@@ -23,7 +25,9 @@ static void rect_window_update_proc(Layer *layer, GContext* ctx) {
   // Grab the bounds for the watchface.
   GRect bounds = layer_get_bounds(layer);
   
-  GRect rect_master = GRect( 0, bounds.size.h/2 - 16, bounds.size.w, 16*2);
+  GRect rect_master = GRect( 0, PBL_IF_ROUND_ELSE( bounds.size.h/2 - RECT_MASTER_HEIGHT/2, bounds.size.h/8), bounds.size.w, RECT_MASTER_HEIGHT);
+  
+  //printf("UL Coord is (%d, %d) while size is (%d, %d)", rect_master.origin.x, rect_master.origin.y, rect_master.size.w, rect_master.size.h);
   //GRect rect_slave = GRect( 0, bounds.size.h/2 - 16 + 16, bounds.size.w, 16*2);
   
   graphics_context_set_fill_color(ctx, GColorDarkCandyAppleRed);
@@ -41,6 +45,8 @@ static void rect_window_load(Window* window) {
   rect_layer = layer_create(bounds);
   layer_add_child(window_layer, rect_layer);
   layer_set_update_proc(rect_layer, rect_window_update_proc);  
+  
+  printf("Success!?");
   
 }
 

@@ -67,9 +67,6 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 static void init() {
   // Nico nico ni.
   
-  // Load rectangular windows.
-  window_rect_push();
-  
   // Load custom font.
   s_font = fonts_load_custom_font(
                           resource_get_handle(RESOURCE_ID_FONT_LEAGUE_BOLD_36));
@@ -89,6 +86,9 @@ static void init() {
   
   window_stack_push(window, true);
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  
+  // Load rectangular windows.
+  rect_window_push();
   
 }
 

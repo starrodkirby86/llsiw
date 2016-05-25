@@ -7,4 +7,4 @@
 
 #pragma once
 
-void window_rect_push();
+void rect_window_push();
