@@ -35,7 +35,8 @@ enum idol {
   Nozomi,
   Hanayo,
   Rin,
-  Umi
+  Umi,
+  Null
 };
 
 // In some future version, we can change this to reflect
@@ -43,8 +44,7 @@ enum idol {
 static int bias[9] = {10,10,10,10,10,10,10,10,10};
 static int bias_size = 90;
 
-// Don't get me wrong, we just need someone to start things off. Harasho.
-static enum idol current_idol = Eli;
+static enum idol current_idol = Null;
 
 static void update_idol() {
   int r, i;
@@ -96,10 +96,10 @@ GColor get_idol_main_color() {
     case Rin:
       return GColorChromeYellow;
     case Umi:
-    default:
       return GColorBlueMoon;
+    default:
+      return GColorDarkGray;
   }  
-  
 }
 
 GColor get_idol_sub_color() {
@@ -128,9 +128,34 @@ GColor get_idol_sub_color() {
     case Rin:
       return GColorCadetBlue;
     case Umi:
-    default:
       return GColorRajah;
+    default:
+      return GColorLightGray;
   }
-  
-  
+}
+
+GBitmap* get_idol_sprite() {
+  // Who doesn't love switch cases?
+  switch(current_idol) {
+    case Eli:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ELI);
+    case Honoka:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_HONK);
+    case Kotori:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_KOTORI);
+    case Maki:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_MAKI);
+    case Nico:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_NICO);
+    case Nozomi:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_NOZO);
+    case Hanayo:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_PANA);
+    case Rin:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_RIN);
+    case Umi:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_UMI);
+    default:
+      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ELI);
+  }    
 }

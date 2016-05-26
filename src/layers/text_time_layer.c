@@ -30,7 +30,9 @@ void text_time_layer_load(Window* window) {
   GRect bounds = layer_get_bounds(window_layer);
   
   // Here's the coordinates for the textLayer.
-  GRect text_location = GRect( 0, PBL_IF_ROUND_ELSE( bounds.size.h/2 - RECT_MASTER_HEIGHT/2, bounds.size.h/8), bounds.size.w, RECT_MASTER_HEIGHT);
+  GRect text_location = GRect( PBL_IF_ROUND_ELSE(bounds.size.w / 6,0), 
+                              PBL_IF_ROUND_ELSE( bounds.size.h/2 - RECT_MASTER_HEIGHT/2, bounds.size.h/8), 
+                              bounds.size.w, RECT_MASTER_HEIGHT);
   
   // Load custom font.
   font_league_main = fonts_load_custom_font(
