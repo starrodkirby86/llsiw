@@ -167,32 +167,34 @@ void get_idol_phrase(char phrase[]) {
   
   switch(current_idol) {
     case Eli:
-      strcpy(phrase,"afYeh");       // Harasho
+      strcpy(phrase,PBL_IF_ROUND_ELSE("afYeh","afYeh"));       // Harasho
       break;
     case Honoka:
-      strcpy(phrase,"bVXZIR");      // Faito dayo
+      strcpy(phrase,PBL_IF_ROUND_ELSE("bVXZIR","bVXZ-IR"));      // Faito dayo
       break;
     case Kotori:
-      strcpy(phrase,"JQUJQU");      // Chun chun
+      strcpy(phrase,PBL_IF_ROUND_ELSE("JQUJQU","JQU-JQU"));      // Chun chun
       break;
     case Maki:
-      strcpy(phrase,"AOTBMA");      // Imi Wakanai
+      strcpy(phrase,PBL_IF_ROUND_ELSE("AOTBMA","AO-TBMA"));      // Imi Wakanai
       break;
     case Nico:
-      strcpy(phrase,"NKENKENh");    // Nico nico nii
+      strcpy(phrase,PBL_IF_ROUND_ELSE("NKENKENh","NKE-NKENh"));    // Nico nico nii
       break;
     case Nozomi:
-      strcpy(phrase,"TFTFijk");     // Washi washi MAX
+      strcpy(phrase,PBL_IF_ROUND_ELSE("TFTFijk","TFTF-ijk"));     // Washi washi MAX
       break;
     case Hanayo:
-      strcpy(phrase,"ISBHGDL");     // Dareka tasukete
+      strcpy(phrase,PBL_IF_ROUND_ELSE("ISBHGDL","ISB-HGDL"));     // Dareka tasukete
       break;
     case Rin:
-      strcpy(phrase,"ACNPh");       // Iku nyaa
+      strcpy(phrase,PBL_IF_ROUND_ELSE("ACNPh","ACNPh"));       // Iku nyaa
       break;
     case Umi:
-      strcpy(phrase,"fcWghYdhZ");   // Rabu Arrow Shoot
+      strcpy(phrase,PBL_IF_ROUND_ELSE("fcWghYdhZ","fcWgh-YdhZ"));   // Rabu Arrow Shoot
     default:
       break;
+    
+    
   }   
 }

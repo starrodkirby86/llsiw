@@ -10,7 +10,17 @@
     "resources": {
         "media": [
             {
-                "characterRegex": "[A-Z?a-k]",
+                "file": "images/bubble.png",
+                "name": "IMAGE_BUBBLE",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "characterRegex": "[A-Za-k\\-]",
                 "file": "fonts/ShortMoji.ttf",
                 "name": "FONT_SHORTMOJI_18",
                 "targetPlatforms": [
@@ -19,10 +29,13 @@
                 "type": "font"
             },
             {
-                "characterRegex": "[A-Z?a-k]",
+                "characterRegex": "[A-Z a-k\\-]",
                 "file": "fonts/ShortMoji.ttf",
                 "name": "FONT_SHORTMOJI_14",
-                "targetPlatforms": null,
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt"
+                ],
                 "type": "font"
             },
             {

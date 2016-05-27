@@ -38,9 +38,10 @@ void text_phrase_layer_load(Window* window) {
   GRect bounds = layer_get_bounds(window_layer);
   
   // Here's the coordinates for the textLayer.
-  GRect text_location = GRect( 0,
-                              PBL_IF_ROUND_ELSE(bounds.size.h / 2 - RECT_MASTER_SIZE,0),
-                              bounds.size.w, PBL_IF_ROUND_ELSE(PHRASE_TEXT_FONT_SIZE_R,PHRASE_TEXT_FONT_SIZE));
+  GRect text_location = GRect( PBL_IF_ROUND_ELSE(0, 0),
+                              PBL_IF_ROUND_ELSE(bounds.size.h / 2 - RECT_MASTER_SIZE, bounds.size.h - RECT_MASTER_SIZE),
+                              PBL_IF_ROUND_ELSE(170, 14*5), 
+                              PBL_IF_ROUND_ELSE(PHRASE_TEXT_FONT_SIZE_R,PHRASE_TEXT_FONT_SIZE*2));
   
   // Load custom font.
   font_moji = fonts_load_custom_font(
@@ -52,6 +53,7 @@ void text_phrase_layer_load(Window* window) {
   text_phrase_layer = text_layer_create(text_location);
   text_layer_set_text_color(text_phrase_layer, get_idol_main_color());
   text_layer_set_background_color(text_phrase_layer, GColorClear);
+  text_layer_set_overflow_mode(text_phrase_layer, GTextOverflowModeWordWrap);
   text_layer_set_text_alignment(text_phrase_layer, GTextAlignmentCenter);
   text_layer_set_font(text_phrase_layer, font_moji);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(text_phrase_layer)); 
