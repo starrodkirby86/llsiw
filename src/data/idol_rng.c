@@ -159,3 +159,40 @@ GBitmap* get_idol_sprite() {
       return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ELI);
   }    
 }
+
+void get_idol_phrase(char phrase[]) {
+  // NOTE: These catchphrases look like garbage due to the usage of
+  // the shortmoji font to workaround Pebble's limited mapping of characters.
+  // Comments like these really do shine, don't they? :)
+  
+  switch(current_idol) {
+    case Eli:
+      strcpy(phrase,"afYeh");       // Harasho
+      break;
+    case Honoka:
+      strcpy(phrase,"bVXZIR");      // Faito dayo
+      break;
+    case Kotori:
+      strcpy(phrase,"JQUJQU");      // Chun chun
+      break;
+    case Maki:
+      strcpy(phrase,"AOTBMA");      // Imi Wakanai
+      break;
+    case Nico:
+      strcpy(phrase,"NKENKENh");    // Nico nico nii
+      break;
+    case Nozomi:
+      strcpy(phrase,"TFTFijk");     // Washi washi MAX
+      break;
+    case Hanayo:
+      strcpy(phrase,"ISBHGDL");     // Dareka tasukete
+      break;
+    case Rin:
+      strcpy(phrase,"ACNPh");       // Iku nyaa
+      break;
+    case Umi:
+      strcpy(phrase,"fcWghYdhZ");   // Rabu Arrow Shoot
+    default:
+      break;
+  }   
+}

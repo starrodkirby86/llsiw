@@ -28,6 +28,18 @@ void string_time_update_proc() {
   // printf("Inside string_time it's %s", buffer_time);
 }
 
+// Invoke THIS function with time_manager
+void string_date_update_proc() {
+  // Updates the string buffer_time, which should hopefully
+  // get updated with the right clock time...
+  time_t temp = time(NULL);
+  struct tm *tick_time = localtime(&temp);
+  
+  buffer_time = "jan 31\nthurs";
+  strftime(buffer_time, sizeof("jan 31\nthurs"), "%b %d%n%a", tick_time);
+  printf("%s", buffer_time);
+}
+
 // Layers should gather data from this function
 void get_time(char buffer_input[]) {
   // And now we can just grab from here.
@@ -35,4 +47,13 @@ void get_time(char buffer_input[]) {
   if(!buffer_input) {
     buffer_input = "00:00";
   }
+}
+
+// Layers should gather data from this function
+void get_date(char buffer_input[]) {
+  // And now we can just grab from here.
+  buffer_input = buffer_time;
+  if(!buffer_input) {
+    buffer_input = "jan 31\nthurs";
+  }  
 }

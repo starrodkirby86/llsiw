@@ -10,9 +10,18 @@
     "resources": {
         "media": [
             {
-                "characterRegex": "[0-9 a-z]",
-                "file": "fonts/leaguespartan-bold.ttf",
-                "name": "FONT_LEAGUE_BOLD_14",
+                "characterRegex": "[A-Z?a-k]",
+                "file": "fonts/ShortMoji.ttf",
+                "name": "FONT_SHORTMOJI_18",
+                "targetPlatforms": [
+                    "chalk"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[A-Z?a-k]",
+                "file": "fonts/ShortMoji.ttf",
+                "name": "FONT_SHORTMOJI_14",
                 "targetPlatforms": null,
                 "type": "font"
             },
@@ -20,6 +29,13 @@
                 "characterRegex": "[0-9 a-z :]",
                 "file": "fonts/leaguespartan-bold.ttf",
                 "name": "FONT_LEAGUE_BOLD_36",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9 ADFJMONSTWacbedgihlonprutvy]",
+                "file": "fonts/leaguespartan-bold.ttf",
+                "name": "FONT_LEAGUE_BOLD_14",
                 "targetPlatforms": null,
                 "type": "font"
             },
@@ -123,7 +139,7 @@
         "chalk"
     ],
     "uuid": "1022aaa4-e761-4ec6-a60c-bcf762bb5f86",
-    "versionLabel": "0.01",
+    "versionLabel": "0.50",
     "watchapp": {
         "watchface": true
     }

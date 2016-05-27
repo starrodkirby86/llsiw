@@ -8,4 +8,6 @@
 #pragma once
 
 void string_time_update_proc();
+void string_date_update_proc();
 void get_time(char buffer_input[]);
+void get_date(char buffer_input[]);
