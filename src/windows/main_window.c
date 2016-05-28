@@ -56,8 +56,8 @@ static void window_unload(Window* window) {
   text_phrase_bg_layer_unload(window);
   text_phrase_layer_unload(window);
   idol_layer_unload(window);
-  anim_bg_layer_unload(window);  
-  anim_logo_layer_unload(window);
+  //anim_bg_layer_unload(window);  
+  //anim_logo_layer_unload(window);
   accel_phrase_unload();
   
   // Destroys the entire window.

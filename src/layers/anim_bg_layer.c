@@ -12,6 +12,14 @@
 
 static Layer *anim_bg_layer;
 
+
+/*
+static void anim_bg_layer_finish_handler(Animation *animation, bool finished, void *context) {
+  anim_bg_layer_unload( layer_get_window(  anim_bg_layer ) );
+}
+*/
+
+/*
 void anim_bg_layer_entry_anim(Window* window) {
 
   // Let's go get the bounds of the window first.
@@ -42,6 +50,7 @@ void anim_bg_layer_entry_anim(Window* window) {
   animation_schedule(anim);
   
 }
+*/
 
 void anim_bg_layer_exit_anim(Window* window) {
 
@@ -68,6 +77,12 @@ void anim_bg_layer_exit_anim(Window* window) {
   animation_set_curve(anim, AnimationCurveEaseOut);
   animation_set_delay(anim, delay_ms);
   animation_set_duration(anim, duration_ms);
+  
+  /*
+  animation_set_handlers(anim, 
+                        (AnimationHandlers) { .stopped = anim_bg_layer_finish_handler },
+                        NULL);
+  */
   
   // OK, ready and fire.
   animation_schedule(anim);

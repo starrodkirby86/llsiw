@@ -24,6 +24,9 @@
 #define KEY_TOGGLE_TAPS   10
 #define KEY_TOGGLE_SAME   11
 
+// CURRENT COUNT OF KEYS
+#define COUNT_KEYS        12
+
 // There should be 12 total settings based on appkeys
 // that corresponds to the keys we defined earlier
 // i.e. KEY_SLIDER_ELI should be 0 in the appkey -> int relation

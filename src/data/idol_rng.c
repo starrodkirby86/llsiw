@@ -43,7 +43,6 @@ enum idol {
 // In some future version, we can change this to reflect
 // a configurable set of random values.
 static int bias[9] = {10,10,10,10,10,10,10,10,10};
-static int spawn_rate = 1;
 
 static enum idol current_idol = Null;
 static bool initial_call = true;
@@ -91,7 +90,7 @@ static void update_idol() {
 // once it hits 60, the idol will change. Configuration pages would be cool too.
 void idol_rng_update_proc(int min_counter) {
   
-  int compare_rate = (persist_read_int(KEY_SLIDER_SPAWN)) ? persist_read_int(KEY_SLIDER_SPAWN) : spawn_rate;
+  int compare_rate = (persist_read_int(KEY_SLIDER_SPAWN)) ? persist_read_int(KEY_SLIDER_SPAWN) : 1;
   // Only change the idol sprite after a spawn rate.
   if( ( (min_counter % compare_rate) == 0) || initial_call) {
     if(initial_call) {
@@ -165,29 +164,40 @@ GColor get_idol_sub_color() {
   }
 }
 
-GBitmap* get_idol_sprite() {
+uint32_t get_idol_sprite() {
   // Who doesn't love switch cases?
+  int r = rand() % 2;
+  
   switch(current_idol) {
     case Eli:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ELI);
+      //printf("Eli with %d", r);
+      return (r ? RESOURCE_ID_IMAGE_ELI : RESOURCE_ID_IMAGE_ELI_2);
     case Honoka:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_HONK);
+      //printf("Honoka with %d", r);
+      return (r ? RESOURCE_ID_IMAGE_HONK : RESOURCE_ID_IMAGE_HONK_2);
     case Kotori:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_KOTORI);
+      //printf("Kotori with %d", r);
+      return (r ? RESOURCE_ID_IMAGE_KOTORI : RESOURCE_ID_IMAGE_KOTORI_2);
     case Maki:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_MAKI);
+      //printf("Maki with %d", r);    
+      return (r ? RESOURCE_ID_IMAGE_MAKI : RESOURCE_ID_IMAGE_MAKI_2);
     case Nico:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_NICO);
+      //printf("Nico with %d", r);    
+      return (r ? RESOURCE_ID_IMAGE_NICO : RESOURCE_ID_IMAGE_NICO_2);
     case Nozomi:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_NOZO);
+      //printf("Nozomi with %d", r);    
+      return (r ? RESOURCE_ID_IMAGE_NOZO : RESOURCE_ID_IMAGE_NOZO_2);
     case Hanayo:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_PANA);
+      //printf("Pana with %d", r);    
+      return (r ? RESOURCE_ID_IMAGE_PANA : RESOURCE_ID_IMAGE_PANA_2);
     case Rin:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_RIN);
+      //printf("Rin with %d", r);    
+      return (r ? RESOURCE_ID_IMAGE_RIN : RESOURCE_ID_IMAGE_RIN_2);
     case Umi:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_UMI);
+      //printf("Umi with %d", r);    
+      return (r ? RESOURCE_ID_IMAGE_UMI : RESOURCE_ID_IMAGE_UMI_2);
     default:
-      return gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ELI);
+      return (RESOURCE_ID_IMAGE_LOGO);
   }    
 }
 

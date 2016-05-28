@@ -19,6 +19,7 @@
 
 static Layer *rect_sub_layer;
 
+/*
 static void rect_sub_layer_anim_entry() {
   // Rectangle entry animation
   
@@ -38,6 +39,7 @@ static void rect_sub_layer_anim_entry() {
   
   animation_schedule(anim);
 }
+*/
 
 
 static void rect_sub_layer_update_proc(Layer *layer, GContext* ctx) {

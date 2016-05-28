@@ -16,7 +16,7 @@
 #define TIME_TEXT_FONT_SIZE 36
 
 static TextLayer *text_time;
-GFont      font_league_main;
+static GFont      font_league_main;
 
 void text_time_update_proc() {
   char* buffer_input = "00:00";

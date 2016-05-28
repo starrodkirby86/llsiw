@@ -13,7 +13,7 @@
 #include "data/string_time.h"
 
 static TextLayer* text_date_layer;
-GFont font_league_sm;
+static GFont font_league_sm;
 
 void text_date_layer_update_proc() {
   char* buffer_input = "jan 31\nthurs";

@@ -12,5 +12,5 @@
 void idol_rng_update_proc();
 GColor get_idol_main_color();
 GColor get_idol_sub_color();
-GBitmap* get_idol_sprite();
+uint32_t get_idol_sprite();
 void get_idol_phrase(char phrase[]);

@@ -23,6 +23,103 @@
     "resources": {
         "media": [
             {
+                "file": "images/logo_ico.png",
+                "menuIcon": true,
+                "name": "IMAGE_LOGO_ICON",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/umi2.png",
+                "name": "IMAGE_UMI_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/rin2.png",
+                "name": "IMAGE_RIN_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/pana2.png",
+                "name": "IMAGE_PANA_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/nozo2.png",
+                "name": "IMAGE_NOZO_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/nico2.png",
+                "name": "IMAGE_NICO_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/maki2.png",
+                "name": "IMAGE_MAKI_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/kotori2.png",
+                "name": "IMAGE_KOTORI_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/honk2.png",
+                "name": "IMAGE_HONK_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/eli2.png",
+                "name": "IMAGE_ELI_2",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
                 "file": "images/b5.png",
                 "name": "IMAGE_BATTERY_5",
                 "targetPlatforms": null,
@@ -60,7 +157,9 @@
             },
             {
                 "file": "images/logo_bw.png",
+                "memoryFormat": "Smallest",
                 "name": "IMAGE_LOGO_BW",
+                "spaceOptimization": "memory",
                 "targetPlatforms": [
                     "aplite"
                 ],
@@ -219,7 +318,7 @@
         "chalk"
     ],
     "uuid": "afdca0f3-fcbd-47f9-9e23-99c1b18c1635",
-    "versionLabel": "0.70",
+    "versionLabel": "1.0",
     "watchapp": {
         "watchface": true
     }

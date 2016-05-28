@@ -16,6 +16,7 @@
 
 static Layer *rect_layer;
 
+/*
 static void rect_layer_anim_entry() {
   // Rectangle entry animation
   
@@ -33,6 +34,7 @@ static void rect_layer_anim_entry() {
   
   animation_schedule(anim);
 }
+*/
 
 static void rect_layer_update_proc(Layer *layer, GContext* ctx) {
   // When we render the layer, what do we draw?
@@ -44,6 +46,9 @@ static void rect_layer_update_proc(Layer *layer, GContext* ctx) {
   //printf("UL Coord is (%d, %d) while size is (%d, %d)", rect_master.origin.x, rect_master.origin.y, rect_master.size.w, rect_master.size.h);
   graphics_context_set_fill_color(ctx, get_idol_main_color());
   graphics_fill_rect(ctx, rect_master, 0, GCornerNone);
+  
+  //APP_LOG(APP_LOG_LEVEL_DEBUG, "Heap bytes free: %d", (int) heap_bytes_free());
+  
 }
 
 void rect_layer_load(Window* window) {

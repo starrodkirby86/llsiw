@@ -49,8 +49,8 @@ void anim_logo_layer_load(Window* window) {
   GRect bounds = layer_get_bounds(window_layer);
   
   // The dimensions are different depending on a round watchface or a rectangular one.
-  GRect image_bounds = GRect( PBL_IF_ROUND_ELSE(bounds.size.w / 4.5, bounds.size.w * 0.152778),
-                              PBL_IF_ROUND_ELSE(bounds.size.h / 4.5, bounds.size.h * 0.20238),
+  GRect image_bounds = GRect( PBL_IF_ROUND_ELSE(40, 22),
+                              PBL_IF_ROUND_ELSE(40, 34),
                               100,100);
   
   #if defined(PBL_COLOR)

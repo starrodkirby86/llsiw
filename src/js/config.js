@@ -30,7 +30,7 @@ module.exports = [
       "label": "Eli",
       "description": "хорошо...",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     },
     {
@@ -40,7 +40,7 @@ module.exports = [
       "label": "Honoka",
       "description": "THIS BREAD IS SO DELICIOUS!",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }, 
     {
@@ -50,7 +50,7 @@ module.exports = [
       "label": "Kotori",
       "description": "(・８・)(・８・)(・８・)(・８・)(・８・)",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }, 
     {
@@ -60,7 +60,7 @@ module.exports = [
       "label": "Maki",
       "description": "I-It's not like I want you to slide that higher...",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }, 
     {
@@ -70,7 +70,7 @@ module.exports = [
       "label": "Nico",
       "description": "Nico nico nii~",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }, 
     {
@@ -80,7 +80,7 @@ module.exports = [
       "label": "Nozomi",
       "description": "Also known as the spiritual power gauge.",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }, 
     {
@@ -90,7 +90,7 @@ module.exports = [
       "label": "Hanayo",
       "description": "DAREKA TASUKETEEEEEEEE",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }, 
     {
@@ -100,7 +100,7 @@ module.exports = [
       "label": "Rin",
       "description": "Maracas not included.",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     },
     {
@@ -110,7 +110,7 @@ module.exports = [
       "label": "Umi",
       "description": "Just because you want to see more of Umi... HOW SHAMELESS!",
       "min": 1,
-      "max": 10,
+      "max": 20,
       "step": 1
     }
   ]

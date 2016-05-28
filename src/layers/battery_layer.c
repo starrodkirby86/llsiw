@@ -58,7 +58,7 @@ void battery_layer_load(Window* window) {
   GRect bounds = layer_get_bounds(window_layer);
   
   // The dimensions are different depending on a round watchface or a rectangular one.
-  GRect image_bounds = GRect( PBL_IF_ROUND_ELSE(bounds.size.w - 24*1.5,RECT_SUB_W_OFFSET),
+  GRect image_bounds = GRect( PBL_IF_ROUND_ELSE(bounds.size.w - 36,RECT_SUB_W_OFFSET),
                               PBL_IF_ROUND_ELSE(bounds.size.h/2+RECT_MASTER_HEIGHT/2, bounds.size.h/8+RECT_MASTER_HEIGHT - 12),
                               24,24);  
   

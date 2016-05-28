@@ -23,7 +23,7 @@
 #define RECT_MASTER_SIZE 48
 
 static TextLayer *text_phrase_layer;
-GFont      font_moji;
+static GFont      font_moji;
 
 void text_phrase_layer_update_proc() {
   char* buffer_input = "AAAAAAAA";
@@ -42,7 +42,7 @@ void text_phrase_layer_load(Window* window) {
   GRect text_location = GRect( PBL_IF_ROUND_ELSE(0, 0),
                               PBL_IF_ROUND_ELSE(bounds.size.h / 2 - RECT_MASTER_SIZE, bounds.size.h - RECT_MASTER_SIZE),
                               PBL_IF_ROUND_ELSE(170, 14*5), 
-                              PBL_IF_ROUND_ELSE(PHRASE_TEXT_FONT_SIZE_R,PHRASE_TEXT_FONT_SIZE*2.5));
+                              PBL_IF_ROUND_ELSE(PHRASE_TEXT_FONT_SIZE_R,PHRASE_TEXT_FONT_SIZE*2 + PHRASE_TEXT_FONT_SIZE/2));
   
   // Load custom font.
   font_moji = fonts_load_custom_font(

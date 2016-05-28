@@ -33,7 +33,7 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
   // Now it's time to do spawn rate
   Tuple *spawn_tuple = dict_find(iter, KEY_SLIDER_SPAWN);
   if(spawn_tuple) {
-    persist_write_int(KEY_SLIDER_SPAWN, spawn_tuple->value->int32);
+    persist_write_int(KEY_SLIDER_SPAWN, spawn_tuple->value->int8);
   }
   else {
     persist_write_int(KEY_SLIDER_SPAWN, 30);
@@ -61,5 +61,7 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 
 void config_manager_load() {
   app_message_register_inbox_received(inbox_received_handler);
-  app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
+  //printf("%d", (int) dict_calc_buffer_size(COUNT_KEYS, sizeof(int8_t)));
+  app_message_open(256,0); // It was a good effort using dict_calc_buffer_size, but using sizeof(int8_t) wasn't going to yield a very good output...
+                           // The 256 size is dangerous since it's not very generalized but it will work for now.
 }

@@ -37,7 +37,7 @@ void string_date_update_proc() {
   
   buffer_time = "jan 31\nthurs";
   strftime(buffer_time, sizeof("jan 31\nthurs"), "%b %d%n%a", tick_time);
-  printf("%s", buffer_time);
+  //printf("%s", buffer_time);
 }
 
 // Layers should gather data from this function

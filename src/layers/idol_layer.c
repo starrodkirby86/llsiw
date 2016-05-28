@@ -22,8 +22,9 @@ static GBitmap* idol_bitmap;
 // Called upon tick invocation.
 void idol_layer_update_proc() {
   gbitmap_destroy(idol_bitmap);
-  idol_bitmap = get_idol_sprite();
+  idol_bitmap = gbitmap_create_with_resource(get_idol_sprite());
   bitmap_layer_set_bitmap(idol_layer, idol_bitmap);
+  //gbitmap_destroy(idol_bitmap);
 }
 
 void idol_layer_load(Window* window) {
@@ -37,12 +38,13 @@ void idol_layer_load(Window* window) {
                               100,105);
   
   // OK get idol sprite
-  idol_bitmap = get_idol_sprite();
+  idol_bitmap = gbitmap_create_with_resource(get_idol_sprite());
   
   // Creates the layer to display the visuals for the window.
   idol_layer = bitmap_layer_create(image_bounds);
   bitmap_layer_set_compositing_mode(idol_layer, GCompOpSet);
   bitmap_layer_set_bitmap(idol_layer, idol_bitmap);
+  //gbitmap_destroy(idol_bitmap);
   layer_add_child(window_get_root_layer(window), 
                                       bitmap_layer_get_layer(idol_layer));  
   
