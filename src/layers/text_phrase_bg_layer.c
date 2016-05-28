@@ -10,6 +10,7 @@
 #define RECT_MASTER_SIZE 48
 
 #include <pebble.h>
+#include "data/accel_phrase.h"
 #include "layers/text_phrase_bg_layer.h"
 
 static BitmapLayer* text_phrase_bg_layer;
@@ -39,9 +40,21 @@ void text_phrase_bg_layer_load(Window* window) {
   bitmap_layer_set_bitmap(text_phrase_bg_layer, bitmap_bubble);
   layer_add_child(window_get_root_layer(window), 
                                       bitmap_layer_get_layer(text_phrase_bg_layer));    
+
+  // If we disable tapping events, the talking bubble will be visible
+  // no matter what. But if tapping is enabled, then this is hidden by default.
+  if(!is_tapping_disabled()) {
+    set_text_phrase_bg_layer_hidden(true);
+  }
 }
 
 void text_phrase_bg_layer_unload(Window* window) {
   gbitmap_destroy(bitmap_bubble);
   bitmap_layer_destroy(text_phrase_bg_layer);
+}
+
+void set_text_phrase_bg_layer_hidden(bool flag) {
+  // Sets the layer as hidden or not. Intended to be used by the accelerometer,
+  // but the load function can also use it too, of course.
+  layer_set_hidden( (Layer *) text_phrase_bg_layer, flag);
 }

@@ -5,6 +5,7 @@
 
 #include <pebble.h>
 #include "main_window.h"
+#include "data/accel_phrase.h"
 #include "data/time_manager.h"
 #include "layers/anim_bg_layer.h"
 #include "layers/anim_logo_layer.h"
@@ -32,6 +33,9 @@ static void window_load(Window* window) {
   
   // Also load time_manager
   time_manager_load();
+  
+  // Also the accel_phrase manager
+  accel_phrase_load();
 }
 
 static void window_unload(Window* window) {
@@ -46,6 +50,7 @@ static void window_unload(Window* window) {
   idol_layer_unload(window);
   anim_bg_layer_unload(window);  
   anim_logo_layer_unload(window);
+  accel_phrase_unload();
   
   // Destroys the entire window.
   window_destroy(main_window);

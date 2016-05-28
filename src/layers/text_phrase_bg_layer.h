@@ -11,3 +11,4 @@
 void text_phrase_bg_layer_update_proc();
 void text_phrase_bg_layer_load(Window* window);
 void text_phrase_bg_layer_unload(Window* window);
+void set_text_phrase_bg_layer_hidden(bool flag);
