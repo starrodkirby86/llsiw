@@ -10,6 +10,24 @@
     "resources": {
         "media": [
             {
+                "file": "images/logo_bw.png",
+                "name": "IMAGE_LOGO_BW",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "data/logo2.png",
+                "name": "IMAGE_LOGO",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "raw"
+            },
+            {
                 "file": "images/bubble.png",
                 "name": "IMAGE_BUBBLE",
                 "targetPlatforms": [
@@ -152,7 +170,7 @@
         "chalk"
     ],
     "uuid": "1022aaa4-e761-4ec6-a60c-bcf762bb5f86",
-    "versionLabel": "0.50",
+    "versionLabel": "0.70",
     "watchapp": {
         "watchface": true
     }

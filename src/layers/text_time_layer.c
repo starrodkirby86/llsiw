@@ -15,7 +15,7 @@
 #define RECT_MASTER_HEIGHT 48
 #define TIME_TEXT_FONT_SIZE 36
 
-TextLayer *text_time;
+static TextLayer *text_time;
 GFont      font_league_main;
 
 void text_time_update_proc() {

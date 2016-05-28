@@ -12,7 +12,7 @@
 #include <pebble.h>
 #include "layers/text_phrase_bg_layer.h"
 
-BitmapLayer* text_phrase_bg_layer;
+static BitmapLayer* text_phrase_bg_layer;
 GBitmap* bitmap_bubble;
 
 void text_phrase_bg_layer_update_proc() {

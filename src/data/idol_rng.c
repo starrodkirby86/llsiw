@@ -66,6 +66,8 @@ static void update_idol() {
 }
 
 // This should be invoked in the time manager.
+// For random's sake, we can have some running counter that,
+// once it hits 60, the idol will change. Configuration pages would be cool too.
 void idol_rng_update_proc() {
   update_idol();
 }
@@ -80,19 +82,19 @@ GColor get_idol_main_color() {
   
   switch(current_idol) {
     case Eli:
-      return GColorPictonBlue;
+      return GColorVividCerulean;
     case Honoka:
       return GColorOrange;
     case Kotori:
       return GColorLightGray;
     case Maki:
-      return GColorRed;
+      return GColorFolly;
     case Nico:
       return GColorFashionMagenta;
     case Nozomi:
-      return GColorImperialPurple;
+      return GColorIndigo;
     case Hanayo:
-      return GColorMalachite;
+      return GColorJaegerGreen;
     case Rin:
       return GColorChromeYellow;
     case Umi:
@@ -112,23 +114,23 @@ GColor get_idol_sub_color() {
 
   switch(current_idol) {
     case Eli:
-      return GColorIcterine;
+      return GColorLiberty;
     case Honoka:
-      return GColorBabyBlueEyes;
+      return GColorWindsorTan;
     case Kotori:
-      return GColorInchworm;
+      return GColorBrass;
     case Maki:
-      return GColorVividCerulean;
+      return GColorPictonBlue;
     case Nico:
       return GColorDarkGray;
     case Nozomi:
-      return GColorRichBrilliantLavender;
+      return GColorPurpureus;
     case Hanayo:
-      return GColorBrass;
+      return GColorLimerick;
     case Rin:
-      return GColorCadetBlue;
+      return GColorPastelYellow;
     case Umi:
-      return GColorRajah;
+      return GColorDukeBlue;
     default:
       return GColorLightGray;
   }
@@ -167,28 +169,28 @@ void get_idol_phrase(char phrase[]) {
   
   switch(current_idol) {
     case Eli:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("afYeh","afYeh"));       // Harasho
+      strcpy(phrase,PBL_IF_ROUND_ELSE("afYeh","afYeh"));            // Harasho
       break;
     case Honoka:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("bVXZIR","bVXZ-IR"));      // Faito dayo
+      strcpy(phrase,PBL_IF_ROUND_ELSE("bVXZIR","bVXZ-IR"));         // Faito dayo
       break;
     case Kotori:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("JQUJQU","JQU-JQU"));      // Chun chun
+      strcpy(phrase,PBL_IF_ROUND_ELSE("JQUJQU","JQU-JQU"));         // Chun chun
       break;
     case Maki:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("AOTBMA","AO-TBMA"));      // Imi Wakanai
+      strcpy(phrase,PBL_IF_ROUND_ELSE("AOTBMA","AO-TBMA"));         // Imi Wakanai
       break;
     case Nico:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("NKENKENh","NKE-NKENh"));    // Nico nico nii
+      strcpy(phrase,PBL_IF_ROUND_ELSE("NKENKENh","NKE-NKENh"));     // Nico nico nii
       break;
     case Nozomi:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("TFTFijk","TFTF-ijk"));     // Washi washi MAX
+      strcpy(phrase,PBL_IF_ROUND_ELSE("TFTFijk","TFTF-ijk"));       // Washi washi MAX
       break;
     case Hanayo:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("ISBHGDL","ISB-HGDL"));     // Dareka tasukete
+      strcpy(phrase,PBL_IF_ROUND_ELSE("ISBHGDL","ISB-HGDL"));       // Dareka tasukete
       break;
     case Rin:
-      strcpy(phrase,PBL_IF_ROUND_ELSE("ACNPh","ACNPh"));       // Iku nyaa
+      strcpy(phrase,PBL_IF_ROUND_ELSE("ACNPh","ACNPh"));            // Iku nyaa
       break;
     case Umi:
       strcpy(phrase,PBL_IF_ROUND_ELSE("fcWghYdhZ","fcWgh-YdhZ"));   // Rabu Arrow Shoot

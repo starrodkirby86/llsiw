@@ -6,6 +6,8 @@
 #include <pebble.h>
 #include "main_window.h"
 #include "data/time_manager.h"
+#include "layers/anim_bg_layer.h"
+#include "layers/anim_logo_layer.h"
 #include "layers/idol_layer.h"
 #include "layers/text_date_layer.h"
 #include "layers/text_time_layer.h"
@@ -25,6 +27,8 @@ static void window_load(Window* window) {
   text_phrase_bg_layer_load(window);
   text_phrase_layer_load(window);
   idol_layer_load(window);
+  anim_bg_layer_load(window);
+  anim_logo_layer_load(window);
   
   // Also load time_manager
   time_manager_load();
@@ -40,6 +44,8 @@ static void window_unload(Window* window) {
   text_phrase_bg_layer_unload(window);
   text_phrase_layer_unload(window);
   idol_layer_unload(window);
+  anim_bg_layer_unload(window);  
+  anim_logo_layer_unload(window);
   
   // Destroys the entire window.
   window_destroy(main_window);

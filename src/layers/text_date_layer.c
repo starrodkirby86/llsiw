@@ -12,7 +12,7 @@
 #include "data/idol_rng.h"
 #include "data/string_time.h"
 
-TextLayer* text_date_layer;
+static TextLayer* text_date_layer;
 GFont font_league_sm;
 
 void text_date_layer_update_proc() {
