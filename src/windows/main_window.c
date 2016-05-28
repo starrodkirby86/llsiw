@@ -6,6 +6,7 @@
 #include <pebble.h>
 #include "main_window.h"
 #include "data/accel_phrase.h"
+#include "data/config_manager.h"
 #include "data/time_manager.h"
 #include "layers/anim_bg_layer.h"
 #include "layers/anim_logo_layer.h"
@@ -33,11 +34,15 @@ static void window_load(Window* window) {
   anim_bg_layer_load(window);
   anim_logo_layer_load(window);
   
+  // Load the config_manager
+  config_manager_load();
+  
   // Also load time_manager
   time_manager_load();
   
   // Also the accel_phrase manager
   accel_phrase_load();
+  
 }
 
 static void window_unload(Window* window) {

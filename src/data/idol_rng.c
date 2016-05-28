@@ -23,6 +23,7 @@
 **/
 
 #include <pebble.h>
+#include "data/config_manager.h"
 #include "data/idol_rng.h"
 
 // The best enum.
@@ -42,24 +43,44 @@ enum idol {
 // In some future version, we can change this to reflect
 // a configurable set of random values.
 static int bias[9] = {10,10,10,10,10,10,10,10,10};
-static int bias_size = 90;
+static int spawn_rate = 1;
 
 static enum idol current_idol = Null;
+static bool initial_call = true;
+
+// Change the bias rates.
+static void update_bias() {
+  for(int i = 0; i < 9; i++) {
+    bias[i] = persist_read_int(i) ? persist_read_int(i) : 10;
+  }
+}
+
+// Find the length of bias based on the settings
+static int bias_length() {
+  int j = 0;
+  for(int i = 0; i < 9; i++) {
+    j += bias[i];
+  }
+  return j;
+}
+
 
 static void update_idol() {
+  
+  update_bias();
+  
   int r, i;
   
   do {
     // First, generate a random number from 0 to bias_size.
-    r = rand() % bias_size;
+    r = rand() % bias_length();
     i = 0;
     // Do a while-loop until the random number is < bias[i] or is at the end.
     // Whenever we exit the loop is what our idol girl should be.
     while(r > bias[i] && i < 9) {
       r -= bias[i++];
     }
-  } while (i == current_idol); // If the randomization turns out to yield the same idol, no thanks, It should change per hour.
-                               // TODO: We can create a boolean in the configuration to stop this behavior though. Let's do that.
+  } while (i == current_idol && !(persist_read_int(KEY_TOGGLE_SAME))); // If the randomization turns out to yield the same idol, no thanks. Unless the bool config!
   
   // Update the current idol to our new hero.
   current_idol = i;
@@ -68,8 +89,16 @@ static void update_idol() {
 // This should be invoked in the time manager.
 // For random's sake, we can have some running counter that,
 // once it hits 60, the idol will change. Configuration pages would be cool too.
-void idol_rng_update_proc() {
-  update_idol();
+void idol_rng_update_proc(int min_counter) {
+  
+  int compare_rate = (persist_read_int(KEY_SLIDER_SPAWN)) ? persist_read_int(KEY_SLIDER_SPAWN) : spawn_rate;
+  // Only change the idol sprite after a spawn rate.
+  if( ( (min_counter % compare_rate) == 0) || initial_call) {
+    if(initial_call) {
+      initial_call = false;
+    }
+    update_idol();
+  }
 }
 
 GColor get_idol_main_color() {

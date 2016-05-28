@@ -1,7 +1,20 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "slider_eli": 0,
+        "slider_honk": 1,
+        "slider_kotori": 2,
+        "slider_maki": 3,
+        "slider_nico": 4,
+        "slider_nozo": 5,
+        "slider_pana": 6,
+        "slider_rin": 7,
+        "slider_spawn": 9,
+        "slider_umi": 8,
+        "toggle_same": 11,
+        "toggle_taps": 10
+    },
     "capabilities": [
-        "health"
+        "configurable"
     ],
     "companyName": "majestic.mudkip@gmail.com",
     "enableMultiJS": true,
@@ -205,7 +218,7 @@
         "basalt",
         "chalk"
     ],
-    "uuid": "1022aaa4-e761-4ec6-a60c-bcf762bb5f86",
+    "uuid": "afdca0f3-fcbd-47f9-9e23-99c1b18c1635",
     "versionLabel": "0.70",
     "watchapp": {
         "watchface": true

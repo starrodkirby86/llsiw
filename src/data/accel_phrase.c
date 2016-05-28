@@ -10,14 +10,10 @@
 */
 
 #include <pebble.h>
+#include "data/config_manager.h"
 #include "data/accel_phrase.h"
 #include "layers/text_phrase_bg_layer.h"
 #include "layers/text_phrase_layer.h"
-
-// If this flag is enabled, then don't record taps.
-// (Battery saving feature because accel doesn't need to be
-// recorded so often.)
-static bool tapping_disabled = false;
 
 static void accel_phrase_callback(void *context) {
   // Hide the text bubbles after a specified period of time.
@@ -41,7 +37,7 @@ static void accel_tap_handler(AccelAxisType axis, int32_t direction) {
 
 // lol
 bool is_tapping_disabled() {
-  return tapping_disabled;
+  return persist_read_bool(KEY_TOGGLE_TAPS);
 }
 
 void accel_phrase_load() {
@@ -51,7 +47,7 @@ void accel_phrase_load() {
   
   // If the bool for tapping_disabled is, well, true, then we aren't going
   // to bother checking for this stuff.
-  if(!tapping_disabled) {
+  if(!is_tapping_disabled()) {
     accel_tap_service_subscribe(accel_tap_handler);
   }
 }

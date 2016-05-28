@@ -4,6 +4,7 @@
 * the text bubbles. The real meat is in accel_phrase.c, so gogo!
 **/
 
+#include <pebble.h>
 #pragma once
 
 bool is_tapping_disabled();
