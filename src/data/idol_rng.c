@@ -92,6 +92,10 @@ void idol_rng_update_proc(int min_counter) {
   
   int compare_rate = (persist_read_int(KEY_SLIDER_SPAWN)) ? persist_read_int(KEY_SLIDER_SPAWN) : 1;
   // Only change the idol sprite after a spawn rate.
+  
+  //printf("%d", min_counter);
+  //printf("%d", compare_rate);
+  
   if( ( (min_counter % compare_rate) == 0) || initial_call) {
     if(initial_call) {
       initial_call = false;
