@@ -9,6 +9,7 @@
 #include "data/time_manager.h"
 #include "layers/anim_bg_layer.h"
 #include "layers/anim_logo_layer.h"
+#include "layers/battery_layer.h"
 #include "layers/idol_layer.h"
 #include "layers/text_date_layer.h"
 #include "layers/text_time_layer.h"
@@ -23,6 +24,7 @@ static void window_load(Window* window) {
   // Layers to load inside the watchface.  
   rect_layer_load(window);
   rect_sub_layer_load(window);
+  battery_layer_load(window);
   text_time_layer_load(window);
   text_date_layer_load(window);
   text_phrase_bg_layer_load(window);
@@ -43,6 +45,7 @@ static void window_unload(Window* window) {
   // Destroys the layers.
   rect_layer_unload(window);  
   rect_sub_layer_unload(window);
+  battery_layer_unload(window);  
   text_time_layer_unload(window);
   text_date_layer_unload(window);
   text_phrase_bg_layer_unload(window);

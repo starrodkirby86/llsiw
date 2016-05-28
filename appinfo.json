@@ -10,6 +10,42 @@
     "resources": {
         "media": [
             {
+                "file": "images/b5.png",
+                "name": "IMAGE_BATTERY_5",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/b4.png",
+                "name": "IMAGE_BATTERY_4",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/b3.png",
+                "name": "IMAGE_BATTERY_3",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/b2.png",
+                "name": "IMAGE_BATTERY_2",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/b1.png",
+                "name": "IMAGE_BATTERY_1",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/b0.png",
+                "name": "IMAGE_BATTERY_0",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
                 "file": "images/logo_bw.png",
                 "name": "IMAGE_LOGO_BW",
                 "targetPlatforms": [
